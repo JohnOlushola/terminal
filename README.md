@@ -2,6 +2,8 @@
 
 Ghostty + zsh + zinit + Starship (Catppuccin Mocha) + modern CLI tools. One script.
 
+![Terminal preview](assets/screenshot.png)
+
 ## What ships
 
 - **Ghostty** terminal
