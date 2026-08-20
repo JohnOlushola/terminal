@@ -12,6 +12,18 @@ eval "$(zoxide init zsh)"
 # --- fzf keybindings + completion (ctrl-r history, ctrl-t files) -------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# --- libpq (psql, pg_dump) ---------------------------------------------------
+# Keg-only, so Homebrew does not symlink it into bin. Needed to talk to
+# Supabase Postgres directly.
+if [ -d /opt/homebrew/opt/libpq/bin ]; then
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+fi
+
+# --- mise (per-project runtime versions: node, python, …) --------------------
+# Must come after PATH edits so its shims win. Guarded so this file still
+# works on a machine without mise.
+command -v mise >/dev/null && eval "$(mise activate zsh)"
+
 # --- modern CLI replacements -------------------------------------------------
 alias ls="eza --icons --git"
 alias ll="eza -l --icons --git --time-style=relative"
