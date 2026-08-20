@@ -6,8 +6,8 @@ Ghostty + zsh + zinit + Starship (Catppuccin Mocha) + modern CLI tools. One scri
 
 ## What ships
 
-- **Ghostty** terminal
-- **JetBrains Mono Nerd Font** (for prompt glyphs)
+- **Ghostty** terminal — pre-configured font + Catppuccin Mocha theme
+- **JetBrainsMono Nerd Font Mono** (for prompt glyphs)
 - **Starship** prompt — Catppuccin Mocha, segmented powerline style
 - **zsh + zinit** with async plugins:
   - `fast-syntax-highlighting`
@@ -29,7 +29,11 @@ chmod +x install.sh
 Then:
 
 1. `exec zsh`
-2. Ghostty → Settings → **Font: JetBrainsMono Nerd Font**
+2. Restart Ghostty — it picks up the font and theme from the symlinked config.
+
+No manual font picking: `install.sh` symlinks `dotfiles/ghostty-config` to
+`~/.config/ghostty/config`, which sets `JetBrainsMono Nerd Font Mono` (the name
+Ghostty actually reports for the cask — verify with `ghostty +list-fonts`).
 
 ## Files
 
@@ -39,7 +43,9 @@ Then:
 | `install.sh` | idempotent installer (brew + symlinks) |
 | `dotfiles/zshrc` | shell config + aliases + zinit bootstrap |
 | `dotfiles/starship.toml` | prompt theme |
+| `dotfiles/ghostty-config` | terminal font, theme, padding |
 
 ## Uninstall
 
-Backups at `~/.zshrc.bak`, `~/.config/starship.toml.bak`. Restore manually.
+Backups at `~/.zshrc.bak`, `~/.config/starship.toml.bak`,
+`~/.config/ghostty/config.bak`. Restore manually.

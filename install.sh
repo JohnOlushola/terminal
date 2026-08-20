@@ -39,8 +39,9 @@ link() {
   log "Linked $dest"
 }
 
-link "$DOTFILES/zshrc"         "$HOME/.zshrc"
-link "$DOTFILES/starship.toml" "$HOME/.config/starship.toml"
+link "$DOTFILES/zshrc"          "$HOME/.zshrc"
+link "$DOTFILES/starship.toml"  "$HOME/.config/starship.toml"
+link "$DOTFILES/ghostty-config" "$HOME/.config/ghostty/config"
 
 cat <<'EOF'
 
@@ -48,8 +49,11 @@ cat <<'EOF'
 
 Next:
   1. exec zsh                                          (reload shell)
-  2. Open Ghostty → Settings → Font →
-        JetBrainsMono Nerd Font                        (enables prompt glyphs)
-  3. First zsh launch auto-installs zinit + plugins (async, takes a few seconds)
+  2. Restart Ghostty                                   (picks up font + theme)
+
+The Ghostty config is symlinked, so the Nerd Font and Catppuccin Mocha theme
+are already set — no need to touch Settings.
+
+First zsh launch auto-installs zinit + plugins (async, takes a few seconds).
 
 EOF

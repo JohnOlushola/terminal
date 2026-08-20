@@ -1,0 +1,13 @@
+# ~/.config/ghostty/config — pairs with the Starship prompt in this repo.
+
+# The Nerd Font supplies the powerline separators and glyphs the prompt draws.
+# Note the family is "…Nerd Font Mono" — that is the name Ghostty reports for
+# the cask's monospace variant. Check with: ghostty +list-fonts | grep JetBrains
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 14
+
+# Match starship.toml's Catppuccin Mocha palette.
+theme = "Catppuccin Mocha"
+
+window-padding-x = 10
+window-padding-y = 8
